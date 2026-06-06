@@ -44,18 +44,6 @@ const projects = [
       "Site moderne et interactif présentant mon profil, mes compétences et mes réalisations techniques, avec déploiement continu.",
     technologies: ["React", "Tailwind CSS", "Vite", "JavaScript"],
   },
-  {
-    name: "Site Institutionnel - Le Faucon",
-    description:
-      "Conception et développement d'un site vitrine complet pour l'école supérieure 'Le Faucon', mettant en avant les formations et l'institution.",
-    technologies: ["HTML5", "CSS3", "JavaScript", "Design Responsive"],
-  },
-  {
-    name: "Projet ESF",
-    description:
-      "Réalisation d'un projet d'intégration web scolaire axé sur la précision du design et la structure sémantique du contenu.",
-    technologies: ["HTML5", "CSS3", "Intégration"],
-  },
 ];
 
 const navigation = [
