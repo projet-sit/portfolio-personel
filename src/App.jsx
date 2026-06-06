@@ -199,18 +199,13 @@ function App() {
               </div>
             </div>
 
-            <div className="reveal relative" style={{ transitionDelay: '200ms' }}>
-              <div className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-2xl shadow-slate-200/80 dark:border-white/10 dark:bg-white/5 dark:shadow-black/30">
+            <div className="reveal relative flex justify-center lg:justify-end" style={{ transitionDelay: '200ms' }}>
+              <div className="group relative h-72 w-72 shrink-0 overflow-hidden rounded-full border-4 border-white bg-white shadow-2xl shadow-slate-200/80 sm:h-96 sm:w-96 dark:border-white/10 dark:bg-white/5 dark:shadow-black/30">
                 <img
                   src="/profile.jpg"
                   alt={`Portrait de ${profile.name}`}
-                  className="h-72 w-full object-cover sm:h-96"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="p-5 text-center">
-                  <p className="text-lg font-bold text-slate-950 dark:text-white">
-                    {profile.name}
-                  </p>
-                </div>
               </div>
             </div>
           </div>
