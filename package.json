@@ -16,10 +16,11 @@
     "@tailwindcss/vite": "latest",
     "@vitejs/plugin-react": "latest",
     "express": "latest",
+    "framer-motion": "^12.40.0",
+    "lucide-react": "^0.400.0",
     "react": "latest",
     "react-dom": "latest",
     "tailwindcss": "latest",
     "vite": "latest"
-  },
-  "devDependencies": {}
+  }
 }
