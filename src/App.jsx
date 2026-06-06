@@ -39,28 +39,22 @@ const skillGroups = [
 
 const projects = [
   {
-    name: "Portfolio Développeur Full Stack",
+    name: "Portfolio Personnel",
     description:
-      "Site personnel responsive présentant mon profil, mes compétences, mes projets et mes informations de contact.",
-    technologies: ["React", "Tailwind CSS", "Node.js", "JavaScript"],
+      "Site moderne et interactif présentant mon profil, mes compétences et mes réalisations techniques, avec déploiement continu.",
+    technologies: ["React", "Tailwind CSS", "Vite", "JavaScript"],
   },
   {
-    name: "Application de Gestion de Tâches",
+    name: "Site Institutionnel - Le Faucon",
     description:
-      "Application web permettant de créer, modifier, supprimer et suivre des tâches avec une interface simple et efficace.",
-    technologies: ["React", "Tailwind CSS", "Node.js", "MySQL", "SQL"],
+      "Conception et développement d'un site vitrine complet pour l'école supérieure 'Le Faucon', mettant en avant les formations et l'institution.",
+    technologies: ["HTML5", "CSS3", "JavaScript", "Design Responsive"],
   },
   {
-    name: "Dashboard de Gestion",
+    name: "Projet ESF",
     description:
-      "Tableau de bord web pensé pour visualiser des données, gérer des utilisateurs et suivre des statistiques importantes.",
-    technologies: ["React", "JavaScript", "Node.js", "SQL"],
-  },
-  {
-    name: "API Backend avec Node.js",
-    description:
-      "API REST conçue pour connecter une application front-end moderne à une base de données MySQL.",
-    technologies: ["Node.js", "MySQL", "SQL", "JavaScript"],
+      "Réalisation d'un projet d'intégration web scolaire axé sur la précision du design et la structure sémantique du contenu.",
+    technologies: ["HTML5", "CSS3", "Intégration"],
   },
 ];
 
