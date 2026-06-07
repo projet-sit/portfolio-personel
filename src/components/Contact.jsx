@@ -30,7 +30,6 @@ export default function Contact() {
                   <Mail size={32} />
                 </div>
                 <h3 className="text-lg font-bold text-white">Email</h3>
-                <p className="mt-2 text-sm text-slate-400">{profile.email}</p>
                 <div className="mt-6 inline-flex items-center gap-2 text-xs font-bold text-cyan-400">
                   Envoyer un message <Send size={14} />
                 </div>
@@ -47,7 +46,6 @@ export default function Contact() {
                   <MessageCircle size={32} />
                 </div>
                 <h3 className="text-lg font-bold text-white">WhatsApp</h3>
-                <p className="mt-2 text-sm text-slate-400">{profile.whatsapp}</p>
                 <div className="mt-6 inline-flex items-center gap-2 text-xs font-bold text-green-400">
                   Démarrer la discussion <Send size={14} />
                 </div>

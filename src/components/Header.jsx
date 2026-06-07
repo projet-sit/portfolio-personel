@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Moon, Sun, Download, Menu, X } from "lucide-react";
+import { Download, Menu, X } from "lucide-react";
 import { navigation } from "../data/portfolio";
 import Button from "./ui/Button";
 
-export default function Header({ isDark, setIsDark }) {
+export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -18,7 +18,7 @@ export default function Header({ isDark, setIsDark }) {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "border-b border-slate-200/80 bg-white/80 backdrop-blur-xl dark:border-white/10 dark:bg-[#08111f]/80"
+          ? "border-b border-white/10 bg-[#08111f]/80 backdrop-blur-xl"
           : "bg-transparent"
       }`}
     >
@@ -31,7 +31,7 @@ export default function Header({ isDark, setIsDark }) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               href={item.href}
-              className="text-sm font-semibold text-slate-600 transition-colors hover:text-cyan-600 dark:text-slate-300 dark:hover:text-cyan-400"
+              className="text-sm font-semibold text-slate-300 transition-colors hover:text-cyan-400"
             >
               {item.label}
             </motion.a>
@@ -39,14 +39,6 @@ export default function Header({ isDark, setIsDark }) {
         </div>
 
         <div className="flex items-center gap-3">
-          <button
-            onClick={() => setIsDark(!isDark)}
-            className="rounded-full p-2 text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/10 transition-colors"
-            aria-label="Changer de thème"
-          >
-            {isDark ? <Sun size={20} /> : <Moon size={20} />}
-          </button>
-          
           <Button
             href="/cv-ulrich-idohou.pdf"
             download
@@ -58,7 +50,7 @@ export default function Header({ isDark, setIsDark }) {
           </Button>
 
           <button
-            className="md:hidden rounded-lg p-2 text-slate-600 dark:text-slate-300"
+            className="md:hidden rounded-lg p-2 text-slate-300"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X /> : <Menu />}
@@ -72,7 +64,7 @@ export default function Header({ isDark, setIsDark }) {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden border-t border-slate-200 bg-white dark:border-white/10 dark:bg-[#08111f]"
+            className="md:hidden border-t border-white/10 bg-[#08111f]"
           >
             <div className="space-y-1 px-4 pb-6 pt-4">
               {navigation.map((item) => (
@@ -80,7 +72,7 @@ export default function Header({ isDark, setIsDark }) {
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block rounded-lg px-3 py-4 text-base font-bold text-slate-900 hover:bg-slate-50 dark:text-white dark:hover:bg-white/5"
+                  className="block rounded-lg px-3 py-4 text-base font-bold text-white hover:bg-white/5"
                 >
                   {item.label}
                 </a>

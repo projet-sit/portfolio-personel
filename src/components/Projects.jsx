@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
-import { projects } from "../data/portfolio";
+import { Github } from "lucide-react";
+import { projects, profile } from "../data/portfolio";
 import SectionHeading from "./ui/SectionHeading";
 import Badge from "./ui/Badge";
+import Button from "./ui/Button";
 
 export default function Projects() {
   return (
@@ -50,16 +51,7 @@ export default function Projects() {
                 <p className="mt-4 flex-1 leading-relaxed text-slate-600 dark:text-slate-400">
                   {project.description}
                 </p>
-                <div className="mt-8 flex items-center justify-between">
-                  <a
-                    href={project.repository}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-white hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors"
-                  >
-                    Voir sur github
-                    <ExternalLink size={16} />
-                  </a>
+                <div className="mt-8 flex items-center justify-end">
                   <span className="text-xs font-black uppercase tracking-widest text-slate-300 dark:text-slate-700">
                     {project.year}
                   </span>
@@ -67,6 +59,19 @@ export default function Projects() {
               </div>
             </motion.article>
           ))}
+        </div>
+
+        <div className="mt-20 flex justify-center">
+          <Button 
+            href={profile.github}
+            target="_blank"
+            rel="noreferrer"
+            variant="outline"
+            className="group"
+          >
+            <Github size={20} className="transition-transform group-hover:rotate-12" />
+            Voir tous mes projets sur GitHub
+          </Button>
         </div>
       </div>
     </section>
