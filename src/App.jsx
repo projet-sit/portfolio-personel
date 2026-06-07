@@ -30,7 +30,7 @@ function App() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center justify-center gap-4">
             <p className="text-sm font-bold text-slate-400 dark:text-slate-400">
-              © {new Date().getFullYear()} {profile.name}
+              © {new Date().getFullYear()} {profile.name} — Tous droits réservés.
             </p>
           </div>
         </div>

@@ -73,7 +73,7 @@ export const projects = [
   {
     name: "Portfolio",
     description:
-      "Version améliorée avec un design premium, des animations fluides et une architecture modulaire.",
+      "Mon portfolio personnel conçu avec React et Tailwind CSS, mettant en avant une architecture modulaire pour une maintenance facilitée et des performances optimales.",
     technologies: ["React", "Framer Motion", "Lucide React", "Tailwind CSS"],
     repository: "https://github.com/ulrich-idohou/portfolio-ulrich-idohou",
     status: "Terminé",

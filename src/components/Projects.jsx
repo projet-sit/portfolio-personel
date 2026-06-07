@@ -21,7 +21,7 @@ export default function Projects() {
               viewport={{ once: true }}
               className="group flex flex-col overflow-hidden rounded-[2.5rem] border border-slate-200 bg-slate-50 transition-all hover:border-cyan-500/50 hover:shadow-2xl hover:shadow-cyan-500/10 dark:border-white/10 dark:bg-[#0d1a2e]"
             >
-              <div className="relative aspect-[16/10] overflow-hidden bg-slate-200 dark:bg-slate-800">
+              <div className="relative aspect-[21/9] overflow-hidden bg-slate-200 dark:bg-slate-800">
                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-blue-600/20 opacity-0 transition-opacity group-hover:opacity-100" />
                 <div className="flex h-full items-center justify-center text-slate-400 transition-transform duration-500 group-hover:scale-110">
                    <span className="text-6xl font-black opacity-10">{project.name.charAt(0)}</span>
