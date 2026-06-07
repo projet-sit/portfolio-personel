@@ -1,18 +1,12 @@
 import { motion } from "framer-motion";
+import { skillGroups } from "../data/portfolio";
+import SectionHeading from "./ui/SectionHeading";
 
-export default function Skills({ skillGroups }) {
+export default function Skills() {
   return (
     <section id="competences" className="scroll-mt-24 py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            className="mt-4 text-3xl font-extrabold text-slate-950 sm:text-4xl dark:text-white"
-          >
-            Compétence
-          </motion.h2>
-        </div>
+        <SectionHeading>Compétences</SectionHeading>
 
         <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {skillGroups.map((group, groupIndex) => (
@@ -21,11 +15,12 @@ export default function Skills({ skillGroups }) {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: groupIndex * 0.1 }}
+              viewport={{ once: true }}
               className="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-8 dark:border-white/10 dark:bg-white/[0.03]"
             >
               <h3 className="text-lg font-bold text-slate-950 dark:text-white">{group.title}</h3>
               <div className="mt-6 flex flex-wrap gap-2">
-                {group.skills.map((skill, skillIndex) => (
+                {group.skills.map((skill) => (
                   <motion.span
                     key={skill}
                     whileHover={{ scale: 1.1 }}

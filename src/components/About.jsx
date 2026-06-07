@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { Sparkles } from "lucide-react";
+import { profile } from "../data/portfolio";
+import SectionHeading from "./ui/SectionHeading";
 
-export default function About({ profile }) {
+export default function About() {
   return (
     <section id="apropos" className="scroll-mt-24 py-24 bg-white dark:bg-white/[0.02]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -34,9 +35,9 @@ export default function About({ profile }) {
             viewport={{ once: true }}
             className="order-1 lg:order-2"
           >
-            <h2 className="mt-4 text-4xl font-extrabold text-slate-950 sm:text-5xl dark:text-white">
+            <SectionHeading centered={false}>
               Passionné par la tech, <br /> tourné vers <span className="text-cyan-500">l'impact.</span>
-            </h2>
+            </SectionHeading>
             
             <div className="mt-8 space-y-6 text-lg leading-relaxed text-slate-600 dark:text-slate-400">
               <p>

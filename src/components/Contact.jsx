@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
-import { Mail, MessageCircle, Send, MapPin, Phone } from "lucide-react";
+import { Mail, MessageCircle, Send } from "lucide-react";
+import { profile } from "../data/portfolio";
+import SectionHeading from "./ui/SectionHeading";
 
-export default function Contact({ profile }) {
+export default function Contact() {
   return (
     <section id="contact" className="scroll-mt-24 py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -10,19 +12,13 @@ export default function Contact({ profile }) {
           <div className="absolute -right-24 -bottom-24 h-64 w-64 rounded-full bg-blue-600/20 blur-[100px]" />
 
           <div className="relative z-10">
-            <div className="text-center max-w-2xl mx-auto">
-              <motion.h2
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 }}
-                className="mt-6 text-5xl font-extrabold tracking-tight text-white"
-              >
-                Travaillons <span className="text-cyan-400">ensemble.</span>
-              </motion.h2 >
-              <p className="mt-8 text-xl leading-relaxed text-slate-400">
-                Vous avez un projet en tête ? Je suis toujours ouvert à de nouvelles opportunités et collaborations créatives.
-              </p>
-            </div>
+            <SectionHeading centered={true}>
+              Travaillons <span className="text-cyan-400">ensemble.</span>
+            </SectionHeading>
+            
+            <p className="mt-8 text-center text-xl leading-relaxed text-slate-400 max-w-2xl mx-auto">
+              Vous avez un projet en tête ? Je suis toujours ouvert à de nouvelles opportunités et collaborations créatives.
+            </p>
 
             <div className="mt-16 grid gap-8 sm:grid-cols-2 max-w-4xl mx-auto">
               <motion.a

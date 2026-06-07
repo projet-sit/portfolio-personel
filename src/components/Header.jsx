@@ -1,16 +1,10 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Moon, Sun, Download, Menu, X } from "lucide-react";
+import { navigation } from "../data/portfolio";
+import Button from "./ui/Button";
 
-const navigation = [
-  { label: "Accueil", href: "#accueil" },
-  { label: "À propos", href: "#apropos" },
-  { label: "Compétences", href: "#competences" },
-  { label: "Services", href: "#services" },
-  { label: "Projets", href: "#projets" },
-];
-
-export default function Header({ isDark, setIsDark, profile }) {
+export default function Header({ isDark, setIsDark }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -45,26 +39,23 @@ export default function Header({ isDark, setIsDark, profile }) {
         </div>
 
         <div className="flex items-center gap-3">
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+          <button
             onClick={() => setIsDark(!isDark)}
-            className="rounded-full p-2 text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/10"
+            className="rounded-full p-2 text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/10 transition-colors"
             aria-label="Changer de thème"
           >
             {isDark ? <Sun size={20} /> : <Moon size={20} />}
-          </motion.button>
+          </button>
           
-          <motion.a
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+          <Button
             href="/cv-ulrich-idohou.pdf"
             download
-            className="hidden items-center gap-2 rounded-full bg-slate-950 px-5 py-2 text-xs font-bold text-white shadow-lg transition hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200 sm:flex"
+            variant="primary"
+            className="hidden sm:flex px-5 py-2 text-xs"
           >
             <Download size={14} />
             CV
-          </motion.a>
+          </Button>
 
           <button
             className="md:hidden rounded-lg p-2 text-slate-600 dark:text-slate-300"
@@ -95,13 +86,14 @@ export default function Header({ isDark, setIsDark, profile }) {
                 </a>
               ))}
               <div className="pt-4">
-                <a
+                <Button
                   href="/cv-ulrich-idohou.pdf"
                   download
-                  className="flex w-full items-center justify-center gap-2 rounded-xl bg-cyan-500 py-4 text-sm font-bold text-white"
+                  variant="cyan"
+                  className="w-full"
                 >
                   <Download size={18} /> Télécharger mon CV
-                </a>
+                </Button>
               </div>
             </div>
           </motion.div>

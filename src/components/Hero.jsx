@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
-import { Github, Mail, MessageCircle, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { profile } from "../data/portfolio";
+import Button from "./ui/Button";
 
-export default function Hero({ profile }) {
+export default function Hero() {
   return (
     <section id="accueil" className="relative flex min-h-screen flex-col justify-center overflow-hidden pt-20">
       {/* Background patterns */}
@@ -27,23 +29,13 @@ export default function Hero({ profile }) {
               </p>
 
               <div className="mt-10 flex flex-wrap justify-center gap-4">
-                <motion.a
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  href="#projets"
-                  className="inline-flex items-center gap-2 rounded-2xl bg-slate-950 px-8 py-4 text-sm font-bold text-white shadow-2xl transition hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200"
-                >
+                <Button href="#projets" variant="primary">
                   Mes réalisations
                   <ArrowRight size={18} />
-                </motion.a>
-                <motion.a
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  href="#contact"
-                  className="inline-flex items-center gap-2 rounded-2xl border-2 border-slate-200 px-8 py-4 text-sm font-bold text-slate-900 transition hover:border-cyan-500 hover:text-cyan-600 dark:border-white/10 dark:text-white dark:hover:border-cyan-400 dark:hover:text-cyan-400"
-                >
+                </Button>
+                <Button href="#contact" variant="outline">
                   Me contacter
-                </motion.a>
+                </Button>
               </div>
             </motion.div>
           </div>
