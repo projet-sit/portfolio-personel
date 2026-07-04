@@ -97,4 +97,13 @@ export const projects = [
     status: "En cours",
     year: "2026",
   },
+  {
+    name: "UniOne",
+    description:
+      "Assistant USSD intelligent pour le Bénin regroupant les actions courantes pour MTN, MOOV et Celtiis : solde, transfert, achat de crédit, forfaits et assistance.",
+    technologies: ["Flutter", "Dart", "Material Design 3"],
+    repository: "https://github.com/projet-sit/unione",
+    status: "Terminé",
+    year: "2026",
+  },
 ];
