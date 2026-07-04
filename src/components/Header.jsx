@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Download, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { navigation } from "../data/portfolio";
-import Button from "./ui/Button";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,16 +38,6 @@ export default function Header() {
         </div>
 
         <div className="flex items-center gap-3">
-          <Button
-            href="/cv-ulrich-idohou.pdf"
-            download
-            variant="primary"
-            className="hidden sm:flex px-5 py-2 text-xs"
-          >
-            <Download size={14} />
-            CV
-          </Button>
-
           <button
             className="md:hidden rounded-lg p-2 text-slate-300"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -77,16 +66,6 @@ export default function Header() {
                   {item.label}
                 </a>
               ))}
-              <div className="pt-4">
-                <Button
-                  href="/cv-ulrich-idohou.pdf"
-                  download
-                  variant="cyan"
-                  className="w-full"
-                >
-                  <Download size={18} /> Télécharger mon CV
-                </Button>
-              </div>
             </div>
           </motion.div>
         )}
