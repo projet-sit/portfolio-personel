@@ -23,9 +23,17 @@ npm start
 
 Le serveur Express écoute `http://127.0.0.1:8085` par défaut. L'hébergeur peut fournir un autre port via la variable d'environnement `PORT`.
 
-## Variables d'environnement et sécurité
+## Administration privée
 
-Le portfolio ne requiert actuellement aucune variable d'environnement côté navigateur et ne contient aucune clé API. Ne placez jamais un secret dans une variable préfixée par `VITE_` : ces valeurs sont incluses dans le bundle public. Les éventuelles clés serveur doivent être stockées uniquement dans l'environnement de l'hébergeur et consignées dans `.env.example` (jamais dans `.env`).
+L'administration est servie par Express, séparément du portfolio public, à `/admin/login`. La page ne figure ni dans la navigation ni dans le sitemap. Toutes les routes `/admin` et `/api/admin/*` vérifient le cookie de session côté serveur ; une requête non authentifiée vers `/admin` est redirigée avant l'envoi du HTML.
+
+Créez un `.env` local à partir de `.env.example` (ce fichier est déjà ignoré par Git), puis renseignez `ADMIN_USERNAME`, `ADMIN_PASSWORD_HASH` et un `JWT_SECRET` aléatoire d'au moins 32 caractères. Ne placez jamais un secret dans une variable préfixée par `VITE_` : ces valeurs sont incluses dans le bundle public. Pour générer le hash bcrypt du mot de passe :
+
+```bash
+npm run hash-admin-password
+```
+
+Sur Render, créez les trois variables dans les secrets du service plutôt que d'envoyer un fichier `.env`. Le dashboard actuel présente les statistiques et la liste des projets publiés ; il est prêt à accueillir des fonctions de gestion supplémentaires côté API.
 
 ## Modifier le contenu
 
@@ -45,3 +53,4 @@ Après toute modification, exécutez `npm run build` pour vérifier le bundle de
 | `npm run build` | Génère le bundle de production dans `dist/`. |
 | `npm run preview` | Prévisualise le bundle avec Vite. |
 | `npm start` | Sert `dist/` avec Express. |
+| `npm run hash-admin-password` | Génère un hash bcrypt pour `ADMIN_PASSWORD_HASH`. |

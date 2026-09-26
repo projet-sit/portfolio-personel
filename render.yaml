@@ -2,8 +2,16 @@ services:
   - type: web
     name: portfolio-ulrich
     env: node
-    buildCommand: npm install && npm run build
+    buildCommand: npm ci && npm run build
     startCommand: npm start
     envVars:
       - key: NODE_VERSION
         value: 20.0.0
+      - key: NODE_ENV
+        value: production
+      - key: ADMIN_USERNAME
+        sync: false
+      - key: ADMIN_PASSWORD_HASH
+        sync: false
+      - key: JWT_SECRET
+        sync: false
