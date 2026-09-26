@@ -7,6 +7,7 @@ import Services from "./components/Services";
 import Projects from "./components/Projects";
 import Approach from "./components/Approach";
 import Contact from "./components/Contact";
+import QuotePage from "./components/QuotePage";
 import Background from "./components/Background";
 import { profile } from "./data/portfolio";
 
@@ -15,20 +16,23 @@ function App() {
     document.documentElement.classList.add("dark");
   }, []);
 
+  const isQuotePage = window.location.pathname.replace(/\/+$/, "") === "/devis";
+
   return (
     <div className="app-shell min-h-screen text-white antialiased dark:text-white">
       <Background />
-      <Header />
-      
-      <main className="relative z-10">
-        <Hero />
-        <About />
-        <Skills />
-        <Services />
-        <Projects />
-        <Approach />
-        <Contact />
-      </main>
+      {isQuotePage ? <QuotePage /> : <>
+        <Header />
+        <main className="relative z-10">
+          <Hero />
+          <About />
+          <Skills />
+          <Services />
+          <Projects />
+          <Approach />
+          <Contact />
+        </main>
+      </>}
 
       <footer className="relative z-10 border-t border-white/10 bg-[#07101c]/60 py-12 backdrop-blur-sm dark:border-white/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
