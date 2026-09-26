@@ -21,7 +21,7 @@ export default function Contact() {
             </p>
 
             <div className="mx-auto mt-12 grid max-w-5xl gap-8 lg:grid-cols-[1.35fr_0.65fr]">
-              <a href="/devis" className="group rounded-[2rem] border border-cyan-400/25 bg-cyan-400/10 p-8 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-300/60 hover:bg-cyan-400/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300">
+              <a href="#/devis" className="group rounded-[2rem] border border-cyan-400/25 bg-cyan-400/10 p-8 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-300/60 hover:bg-cyan-400/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300">
                 <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-cyan-300">Demander un devis</p>
                 <h3 className="mt-4 text-2xl font-extrabold text-white">Présentez votre projet, simplement.</h3>
                 <p className="mt-3 max-w-xl text-sm leading-relaxed text-slate-300">Accédez à une page dédiée pour décrire votre besoin, votre budget indicatif et votre échéance.</p>

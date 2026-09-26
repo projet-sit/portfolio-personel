@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -12,11 +12,22 @@ import Background from "./components/Background";
 import { profile } from "./data/portfolio";
 
 function App() {
+  const [isQuotePage, setIsQuotePage] = useState(
+    () => window.location.hash === "#/devis" || window.location.pathname.replace(/\/+$/, "") === "/devis",
+  );
+
   useEffect(() => {
     document.documentElement.classList.add("dark");
+    const updateRoute = () => {
+      setIsQuotePage(window.location.hash === "#/devis" || window.location.pathname.replace(/\/+$/, "") === "/devis");
+    };
+    window.addEventListener("hashchange", updateRoute);
+    window.addEventListener("popstate", updateRoute);
+    return () => {
+      window.removeEventListener("hashchange", updateRoute);
+      window.removeEventListener("popstate", updateRoute);
+    };
   }, []);
-
-  const isQuotePage = window.location.pathname.replace(/\/+$/, "") === "/devis";
 
   return (
     <div className="app-shell min-h-screen text-white antialiased dark:text-white">
