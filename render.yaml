@@ -1,13 +1,9 @@
 services:
   - type: web
     name: portfolio-ulrich
-    runtime: node
-    plan: free
+    env: node
     buildCommand: npm ci && npm run build
     startCommand: npm start
-    branch: main
-    autoDeploy: true
-    healthCheckPath: /api/health
     envVars:
       - key: NODE_VERSION
         value: 20.0.0
