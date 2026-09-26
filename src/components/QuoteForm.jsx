@@ -53,12 +53,7 @@ export default function QuoteForm() {
         </label>
         <label className="text-sm font-bold text-slate-200">
           Budget indicatif
-          <select className={fieldClassName} name="budget" defaultValue="À définir">
-            <option>À définir</option>
-            <option>Moins de 500 000 FCFA</option>
-            <option>500 000 à 1 000 000 FCFA</option>
-            <option>Plus de 1 000 000 FCFA</option>
-          </select>
+          <input className={fieldClassName} name="budget" inputMode="decimal" placeholder="Ex. 450 000 FCFA ou une fourchette" />
         </label>
         <label className="text-sm font-bold text-slate-200 sm:col-span-2">
           Échéance souhaitée

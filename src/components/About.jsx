@@ -32,11 +32,11 @@ export default function About() {
             className="order-1 lg:order-2"
             delay={180}
           >
-            <SectionHeading centered={false}>
+            <SectionHeading centered={false} mobileCentered>
               Passionné par la tech, <br /> tourné vers <span className="text-cyan-500">l'impact.</span>
             </SectionHeading>
             
-            <div className="mt-8 space-y-6 text-lg leading-relaxed text-slate-600 dark:text-slate-400">
+            <div className="mt-8 space-y-6 text-center text-lg leading-relaxed text-slate-600 lg:text-left dark:text-slate-400">
               <p>
                 Je suis {profile.name}, un développeur passionné basé à {profile.location}. 
                 Mon parcours est guidé par une curiosité insatiable pour les nouvelles technologies 
