@@ -1,4 +1,5 @@
 import express from "express";
+import { existsSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -6,6 +7,13 @@ const app = express();
 const port = process.env.PORT || 8085;
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distPath = path.join(__dirname, "dist");
+
+// Le serveur ne doit démarrer qu'avec les fichiers générés par `npm run build`.
+if (!existsSync(distPath)) {
+  throw new Error("Le dossier dist est introuvable. Exécutez `npm run build` avant `npm start`.");
+}
+
+app.disable("x-powered-by");
 
 // Sert les fichiers générés par Vite après `npm run build`.
 app.use(

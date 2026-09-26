@@ -7,6 +7,7 @@ export const profile = {
   whatsapp: "0191831317",
   whatsappUrl: "https://wa.me/2290191831317",
   github: "https://github.com/projet-sit",
+  cvUrl: "/cv-ulrich-idohou.pdf",
   tagline:
     "Développeur Full Stack basé à Cotonou, je conçois des applications web modernes, performantes et adaptées aux besoins réels des utilisateurs.",
 };
@@ -17,6 +18,7 @@ export const navigation = [
   { label: "Compétences", href: "#competences" },
   { label: "Services", href: "#services" },
   { label: "Projets", href: "#projets" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export const skillGroups = [
@@ -75,7 +77,6 @@ export const projects = [
     description:
       "Site vitrine personnel présentant mes compétences, mes projets et mon parcours de développeur web et mobile.",
     technologies: ["React", "Framer Motion", "Lucide React", "Tailwind CSS"],
-    repository: "https://github.com/ulrich-idohou/portfolio-ulrich-idohou",
     image: "/projet-portfolio.jpg",
     status: "Terminé",
     year: "2026",

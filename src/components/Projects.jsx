@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Github } from "lucide-react";
 import { projects, profile } from "../data/portfolio";
 import SectionHeading from "./ui/SectionHeading";
@@ -12,19 +11,18 @@ export default function Projects() {
         <SectionHeading>Mes projets</SectionHeading>
 
         <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project, index) => (
-            <motion.article
+          {projects.map((project) => (
+            <article
               key={project.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              viewport={{ once: true }}
               className="group flex flex-col overflow-hidden rounded-[2.5rem] border border-slate-200 bg-slate-50 transition-all hover:border-cyan-500/50 hover:shadow-2xl hover:shadow-cyan-500/10 dark:border-white/10 dark:bg-[#0d1a2e]"
             >
               <div className="relative aspect-[21/9] overflow-hidden bg-slate-200 dark:bg-slate-800">
                 <img
                   src={project.image}
                   alt={`Aperçu du projet ${project.name}`}
+                  loading="lazy"
+                  decoding="async"
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-blue-600/20 opacity-0 transition-opacity group-hover:opacity-100" />
@@ -53,13 +51,23 @@ export default function Projects() {
                 <p className="mt-4 flex-1 leading-relaxed text-slate-600 dark:text-slate-400">
                   {project.description}
                 </p>
-                <div className="mt-8 flex items-center justify-end">
+                <div className="mt-8 flex items-center justify-between gap-4">
+                  {project.repository && (
+                    <a
+                      href={project.repository}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 text-sm font-bold text-cyan-600 transition-colors hover:text-cyan-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 dark:text-cyan-400"
+                    >
+                      <Github size={18} aria-hidden="true" /> Voir le dépôt
+                    </a>
+                  )}
                   <span className="text-xs font-black uppercase tracking-widest text-slate-300 dark:text-slate-700">
                     {project.year}
                   </span>
                 </div>
               </div>
-            </motion.article>
+            </article>
           ))}
         </div>
 

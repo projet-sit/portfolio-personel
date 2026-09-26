@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Mail, MessageCircle, Send } from "lucide-react";
 import { profile } from "../data/portfolio";
 import SectionHeading from "./ui/SectionHeading";
@@ -21,10 +20,10 @@ export default function Contact() {
             </p>
 
             <div className="mt-16 grid gap-8 sm:grid-cols-2 max-w-4xl mx-auto">
-              <motion.a
-                whileHover={{ y: -5, scale: 1.02 }}
+              <a
                 href={`mailto:${profile.email}`}
-                className="flex flex-col items-center justify-center rounded-[2rem] bg-white/5 p-10 text-center transition-colors hover:bg-white/10"
+                aria-label={`Écrire à ${profile.email}`}
+                className="flex flex-col items-center justify-center rounded-[2rem] bg-white/5 p-10 text-center transition-all hover:-translate-y-1 hover:scale-[1.02] hover:bg-white/10 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
               >
                 <div className="mb-6 rounded-2xl bg-cyan-500/20 p-4 text-cyan-400">
                   <Mail size={32} />
@@ -33,14 +32,14 @@ export default function Contact() {
                 <div className="mt-6 inline-flex items-center gap-2 text-xs font-bold text-cyan-400">
                   Envoyer un message <Send size={14} />
                 </div>
-              </motion.a>
+              </a>
 
-              <motion.a
-                whileHover={{ y: -5, scale: 1.02 }}
+              <a
                 href={profile.whatsappUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="flex flex-col items-center justify-center rounded-[2rem] bg-white/5 p-10 text-center transition-colors hover:bg-white/10"
+                aria-label="Démarrer une discussion WhatsApp avec Ulrich Merveil"
+                className="flex flex-col items-center justify-center rounded-[2rem] bg-white/5 p-10 text-center transition-all hover:-translate-y-1 hover:scale-[1.02] hover:bg-white/10 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-400"
               >
                 <div className="mb-6 rounded-2xl bg-green-500/20 p-4 text-green-400">
                   <MessageCircle size={32} />
@@ -49,7 +48,7 @@ export default function Contact() {
                 <div className="mt-6 inline-flex items-center gap-2 text-xs font-bold text-green-400">
                   Démarrer la discussion <Send size={14} />
                 </div>
-              </motion.a>
+              </a>
             </div>
           </div>
         </div>

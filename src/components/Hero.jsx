@@ -1,5 +1,4 @@
-import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
 import { profile } from "../data/portfolio";
 import Button from "./ui/Button";
 
@@ -15,11 +14,7 @@ export default function Hero() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center text-center">
           <div className="relative z-10 max-w-4xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
+            <div>
               <h1 className="mt-8 text-5xl font-extrabold tracking-tight text-slate-950 sm:text-6xl lg:text-7xl dark:text-white">
                 Bâtir des <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">solutions digitales</span> qui comptent.
               </h1>
@@ -36,8 +31,11 @@ export default function Hero() {
                 <Button href="#contact" variant="outline">
                   Me contacter
                 </Button>
+                <Button href={profile.cvUrl} download variant="ghost">
+                  <Download size={18} aria-hidden="true" /> Télécharger mon CV
+                </Button>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>

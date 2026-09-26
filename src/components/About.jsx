@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { profile } from "../data/portfolio";
 import SectionHeading from "./ui/SectionHeading";
 
@@ -8,31 +7,26 @@ export default function About() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
           {/* Photo de profil */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
+          <div
             className="relative order-2 lg:order-1"
           >
             <div className="relative mx-auto aspect-square w-full max-w-md overflow-hidden rounded-3xl border-8 border-slate-100 bg-white shadow-2xl dark:border-white/5 dark:bg-slate-800">
               <img
                 src="/profile.jpg"
                 alt={profile.name}
+                loading="lazy"
+                decoding="async"
+                sizes="(min-width: 1024px) 448px, calc(100vw - 2rem)"
                 className="h-full w-full object-cover transition-all duration-500 hover:scale-105"
               />
             </div>
             
             {/* Effet décoratif en arrière-plan */}
             <div className="absolute -bottom-6 -left-6 -z-10 h-32 w-32 rounded-2xl bg-cyan-500/10 blur-2xl dark:bg-cyan-500/20" />
-          </motion.div>
+          </div>
 
           {/* Contenu textuel */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
+          <div
             className="order-1 lg:order-2"
           >
             <SectionHeading centered={false}>
@@ -51,7 +45,7 @@ export default function About() {
                 mais aussi redoutablement efficaces pour l'utilisateur final.
               </p>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

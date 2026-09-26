@@ -1,7 +1,9 @@
-import { motion } from "framer-motion";
-import * as Icons from "lucide-react";
+import { Code2, Cpu, Globe2, Sparkles } from "lucide-react";
 import { services } from "../data/portfolio";
 import SectionHeading from "./ui/SectionHeading";
+
+// Importer uniquement les icônes utilisées évite d'inclure toute la bibliothèque dans le bundle.
+const serviceIcons = { Code2, Cpu, Globe2, Sparkles };
 
 export default function Services() {
   return (
@@ -11,16 +13,11 @@ export default function Services() {
 
         <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {services.map((service, index) => {
-            const Icon = Icons[service.iconName];
+            const Icon = serviceIcons[service.iconName];
             return (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -8 }}
-                className="group relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-8 transition-colors hover:border-cyan-500/50 dark:border-white/10 dark:bg-white/[0.03] dark:hover:border-cyan-500/30"
+                className="group relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-8 transition-all hover:-translate-y-2 hover:border-cyan-500/50 dark:border-white/10 dark:bg-white/[0.03] dark:hover:border-cyan-500/30"
               >
                 <div className={`absolute -right-4 -top-4 h-24 w-24 bg-gradient-to-br ${service.gradient} blur-2xl transition-transform group-hover:scale-150`} />
                 
@@ -35,7 +32,7 @@ export default function Services() {
                     {service.description}
                   </p>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
         </div>
