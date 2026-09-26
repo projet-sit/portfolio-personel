@@ -6,8 +6,6 @@ export const profile = {
   email: "ulrichidohou5@gmail.com",
   whatsapp: "0191831317",
   whatsappUrl: "https://wa.me/2290191831317",
-  github: "https://github.com/projet-sit",
-  cvUrl: "/cv-ulrich-idohou.pdf",
   tagline:
     "Développeur Full Stack basé à Cotonou, je conçois des applications web modernes, performantes et adaptées aux besoins réels des utilisateurs.",
 };

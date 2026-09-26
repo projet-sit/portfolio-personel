@@ -1,4 +1,4 @@
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { profile } from "../data/portfolio";
 import Button from "./ui/Button";
 
@@ -30,9 +30,6 @@ export default function Hero() {
                 </Button>
                 <Button href="#contact" variant="outline">
                   Me contacter
-                </Button>
-                <Button href={profile.cvUrl} download variant="ghost">
-                  <Download size={18} aria-hidden="true" /> Télécharger mon CV
                 </Button>
               </div>
             </div>

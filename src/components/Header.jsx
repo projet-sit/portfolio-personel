@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { Download, Menu, X } from "lucide-react";
-import { navigation, profile } from "../data/portfolio";
+import { Menu, X } from "lucide-react";
+import { navigation } from "../data/portfolio";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -63,13 +63,6 @@ export default function Header() {
                   {item.label}
                 </a>
               ))}
-              <a
-                href={profile.cvUrl}
-                download
-                className="mt-3 flex items-center justify-center gap-2 rounded-lg bg-cyan-500 px-3 py-4 text-base font-bold text-white transition-colors hover:bg-cyan-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
-              >
-                <Download size={18} aria-hidden="true" /> Télécharger mon CV
-              </a>
             </div>
           </div>
       )}

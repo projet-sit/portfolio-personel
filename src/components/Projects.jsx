@@ -1,8 +1,7 @@
 import { Github } from "lucide-react";
-import { projects, profile } from "../data/portfolio";
+import { projects } from "../data/portfolio";
 import SectionHeading from "./ui/SectionHeading";
 import Badge from "./ui/Badge";
-import Button from "./ui/Button";
 
 export default function Projects() {
   return (
@@ -69,19 +68,6 @@ export default function Projects() {
               </div>
             </article>
           ))}
-        </div>
-
-        <div className="mt-20 flex justify-center">
-          <Button 
-            href={profile.github}
-            target="_blank"
-            rel="noreferrer"
-            variant="outline"
-            className="group"
-          >
-            <Github size={20} className="transition-transform group-hover:rotate-12" />
-            Voir tous mes projets sur GitHub
-          </Button>
         </div>
       </div>
     </section>
