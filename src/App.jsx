@@ -5,6 +5,7 @@ import About from "./components/About";
 import Skills from "./components/Skills";
 import Services from "./components/Services";
 import Projects from "./components/Projects";
+import Approach from "./components/Approach";
 import Contact from "./components/Contact";
 import Background from "./components/Background";
 import { profile } from "./data/portfolio";
@@ -25,6 +26,7 @@ function App() {
         <Skills />
         <Services />
         <Projects />
+        <Approach />
         <Contact />
       </main>
 

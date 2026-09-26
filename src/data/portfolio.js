@@ -69,6 +69,27 @@ export const services = [
   },
 ];
 
+export const approachPoints = [
+  {
+    title: "Partir du besoin réel",
+    description: "Avant de choisir une technologie, je cherche à comprendre les utilisateurs, le contexte et le résultat attendu.",
+    outcome: "Des fonctionnalités plus claires et pertinentes.",
+    iconName: "MessagesSquare",
+  },
+  {
+    title: "Construire de bout en bout",
+    description: "Interface, API, données et déploiement : j'aborde le produit comme un ensemble cohérent, pas comme des écrans isolés.",
+    outcome: "Un projet plus simple à faire évoluer.",
+    iconName: "Layers3",
+  },
+  {
+    title: "Soigner ce qui compte",
+    description: "Performance, accessibilité et détails d'interface sont pris en compte pour proposer une expérience fluide et inclusive.",
+    outcome: "Une expérience qui inspire confiance dès le premier usage.",
+    iconName: "Sparkles",
+  },
+];
+
 export const projects = [
   {
     name: "Portfolio",

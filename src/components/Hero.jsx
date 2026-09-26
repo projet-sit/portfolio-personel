@@ -26,8 +26,8 @@ export default function Hero() {
                   Mes réalisations
                   <ArrowRight size={18} />
                 </Button>
-                <Button href="#contact" variant="outline">
-                  Me contacter
+                <Button href="#devis" variant="outline">
+                  Demander un devis
                 </Button>
               </div>
             </div>
