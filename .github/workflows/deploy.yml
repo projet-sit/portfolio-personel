@@ -28,6 +28,11 @@ jobs:
       - name: Build
         run: npm run build
 
+      # GitHub Pages ne peut pas appliquer l'authentification Express :
+      # aucun HTML ni bundle d'administration ne doit y être publié.
+      - name: Remove private admin build
+        run: rm -rf ./dist/admin
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
