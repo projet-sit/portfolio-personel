@@ -1,14 +1,16 @@
 import { profile } from "../data/portfolio";
 import SectionHeading from "./ui/SectionHeading";
+import Reveal from "./ui/Reveal";
 
 export default function About() {
   return (
-    <section id="apropos" className="scroll-mt-24 py-24 bg-white dark:bg-white/[0.02]">
+    <section id="apropos" className="content-section scroll-mt-24 py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
           {/* Photo de profil */}
-          <div
+          <Reveal
             className="relative order-2 lg:order-1"
+            delay={80}
           >
             <div className="relative mx-auto aspect-square w-full max-w-md overflow-hidden rounded-3xl border-8 border-slate-100 bg-white shadow-2xl dark:border-white/5 dark:bg-slate-800">
               <img
@@ -23,11 +25,12 @@ export default function About() {
             
             {/* Effet décoratif en arrière-plan */}
             <div className="absolute -bottom-6 -left-6 -z-10 h-32 w-32 rounded-2xl bg-cyan-500/10 blur-2xl dark:bg-cyan-500/20" />
-          </div>
+          </Reveal>
 
           {/* Contenu textuel */}
-          <div
+          <Reveal
             className="order-1 lg:order-2"
+            delay={180}
           >
             <SectionHeading centered={false}>
               Passionné par la tech, <br /> tourné vers <span className="text-cyan-500">l'impact.</span>
@@ -45,7 +48,7 @@ export default function About() {
                 mais aussi redoutablement efficaces pour l'utilisateur final.
               </p>
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

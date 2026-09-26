@@ -1,16 +1,17 @@
 import { Mail, MessageCircle, Send } from "lucide-react";
 import { profile } from "../data/portfolio";
 import SectionHeading from "./ui/SectionHeading";
+import Reveal from "./ui/Reveal";
 
 export default function Contact() {
   return (
-    <section id="contact" className="scroll-mt-24 py-24">
+    <section id="contact" className="content-section scroll-mt-24 py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="relative overflow-hidden rounded-[3rem] bg-slate-950 px-8 py-16 dark:bg-white/[0.03] sm:px-16 lg:py-24">
           <div className="absolute -left-24 -top-24 h-64 w-64 rounded-full bg-cyan-500/20 blur-[100px]" />
           <div className="absolute -right-24 -bottom-24 h-64 w-64 rounded-full bg-blue-600/20 blur-[100px]" />
 
-          <div className="relative z-10">
+          <Reveal className="relative z-10">
             <SectionHeading centered={true}>
               Travaillons <span className="text-cyan-400">ensemble.</span>
             </SectionHeading>
@@ -50,7 +51,7 @@ export default function Contact() {
                 </div>
               </a>
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

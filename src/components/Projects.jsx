@@ -2,18 +2,21 @@ import { Github } from "lucide-react";
 import { projects } from "../data/portfolio";
 import SectionHeading from "./ui/SectionHeading";
 import Badge from "./ui/Badge";
+import Reveal from "./ui/Reveal";
 
 export default function Projects() {
   return (
-    <section id="projets" className="scroll-mt-24 bg-white py-24 dark:bg-white/[0.02]">
+    <section id="projets" className="content-section content-section-elevated scroll-mt-24 py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading>Mes projets</SectionHeading>
+        <Reveal><SectionHeading>Mes projets</SectionHeading></Reveal>
 
         <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => (
-            <article
+          {projects.map((project, index) => (
+            <Reveal
               key={project.name}
-              className="group flex flex-col overflow-hidden rounded-[2.5rem] border border-slate-200 bg-slate-50 transition-all hover:border-cyan-500/50 hover:shadow-2xl hover:shadow-cyan-500/10 dark:border-white/10 dark:bg-[#0d1a2e]"
+              as="article"
+              delay={index * 100}
+              className="group flex flex-col overflow-hidden rounded-[2.5rem] border border-slate-200 bg-slate-50/95 transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500/50 hover:shadow-2xl hover:shadow-cyan-500/10 dark:border-white/10 dark:bg-[#0d1a2e]/95"
             >
               <div className="relative aspect-[21/9] overflow-hidden bg-slate-200 dark:bg-slate-800">
                 <img
@@ -66,7 +69,7 @@ export default function Projects() {
                   </span>
                 </div>
               </div>
-            </article>
+            </Reveal>
           ))}
         </div>
       </div>

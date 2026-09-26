@@ -1,23 +1,25 @@
 import { Code2, Cpu, Globe2, Sparkles } from "lucide-react";
 import { services } from "../data/portfolio";
 import SectionHeading from "./ui/SectionHeading";
+import Reveal from "./ui/Reveal";
 
 // Importer uniquement les icônes utilisées évite d'inclure toute la bibliothèque dans le bundle.
 const serviceIcons = { Code2, Cpu, Globe2, Sparkles };
 
 export default function Services() {
   return (
-    <section id="services" className="scroll-mt-24 py-24">
+    <section id="services" className="content-section scroll-mt-24 py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading>Comment je peux vous aider ?</SectionHeading>
+        <Reveal><SectionHeading>Comment je peux vous aider ?</SectionHeading></Reveal>
 
         <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {services.map((service, index) => {
             const Icon = serviceIcons[service.iconName];
             return (
-              <div
+              <Reveal
                 key={index}
-                className="group relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-8 transition-all hover:-translate-y-2 hover:border-cyan-500/50 dark:border-white/10 dark:bg-white/[0.03] dark:hover:border-cyan-500/30"
+                delay={index * 90}
+                className="group relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white/90 p-8 transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500/50 hover:shadow-xl hover:shadow-cyan-950/20 dark:border-white/10 dark:bg-white/[0.03] dark:hover:border-cyan-500/30"
               >
                 <div className={`absolute -right-4 -top-4 h-24 w-24 bg-gradient-to-br ${service.gradient} blur-2xl transition-transform group-hover:scale-150`} />
                 
@@ -32,7 +34,7 @@ export default function Services() {
                     {service.description}
                   </p>
                 </div>
-              </div>
+              </Reveal>
             );
           })}
         </div>
