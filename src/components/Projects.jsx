@@ -18,25 +18,33 @@ export default function Projects() {
               delay={index * 100}
               className="group flex flex-col overflow-hidden rounded-[2.5rem] border border-slate-200 bg-slate-50/95 transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500/50 hover:shadow-2xl hover:shadow-cyan-500/10 dark:border-white/10 dark:bg-[#0d1a2e]/95"
             >
-              <div className="relative aspect-[21/9] overflow-hidden bg-slate-200 dark:bg-slate-800">
+              <div className="relative aspect-[16/10] overflow-hidden bg-slate-200 dark:bg-slate-800">
                 <img
                   src={project.image}
                   alt={`Aperçu du projet ${project.name}`}
                   loading="lazy"
                   decoding="async"
                   sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-blue-600/20 opacity-0 transition-opacity group-hover:opacity-100" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-slate-950/30 opacity-60 transition-opacity group-hover:opacity-40" />
                 
-                <div className="absolute top-6 right-6">
+                {project.category && (
+                  <div className="absolute top-5 left-5 z-10">
+                    <span className="inline-flex items-center rounded-full bg-slate-950/80 px-3 py-1 text-[11px] font-bold text-cyan-300 backdrop-blur-md border border-cyan-500/30 shadow-md">
+                      {project.category}
+                    </span>
+                  </div>
+                )}
+
+                <div className="absolute top-5 right-5 z-10">
                   <Badge variant={project.status === 'Terminé' ? 'success' : 'warning'}>
                     {project.status}
                   </Badge>
                 </div>
 
-                <div className="absolute bottom-6 left-6 right-6 translate-y-4 opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
-                  <div className="flex flex-wrap gap-2">
+                <div className="absolute bottom-4 left-5 right-5 translate-y-2 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                  <div className="flex flex-wrap gap-1.5">
                     {project.technologies.map((tech) => (
                       <Badge key={tech} variant="tech">
                         {tech}
@@ -64,7 +72,7 @@ export default function Projects() {
                       <Github size={18} aria-hidden="true" /> Voir le dépôt
                     </a>
                   )}
-                  <span className="text-xs font-black uppercase tracking-widest text-slate-300 dark:text-slate-700">
+                  <span className="text-xs font-black uppercase tracking-widest text-slate-400 dark:text-slate-600">
                     {project.year}
                   </span>
                 </div>

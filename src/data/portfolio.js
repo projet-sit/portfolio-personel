@@ -1,13 +1,13 @@
 export const profile = {
   name: "IDOHOU Babatoundé Ulrich Merveil",
   shortName: "Ulrich Merveil",
-  title: "Développeur Full Stack",
+  title: "Développeur Full Stack & Mobile",
   location: "Cotonou, Bénin",
   email: "ulrichidohou5@gmail.com",
   whatsapp: "0191831317",
   whatsappUrl: "https://wa.me/2290191831317",
   tagline:
-    "Développeur Full Stack basé à Cotonou, je conçois des applications web modernes, performantes et adaptées aux besoins réels des utilisateurs.",
+    "Développeur Full Stack & Mobile basé à Cotonou, je conçois des applications web et mobiles modernes, performantes et adaptées aux besoins réels des utilisateurs.",
 };
 
 export const navigation = [
@@ -21,6 +21,10 @@ export const navigation = [
 
 export const skillGroups = [
   {
+    title: "Mobile (Flutter)",
+    skills: ["Flutter", "Dart", "State Management", "Material Design 3", "Architecture Hors-ligne"],
+  },
+  {
     title: "Web Frontend",
     skills: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Vite"],
   },
@@ -29,19 +33,15 @@ export const skillGroups = [
     skills: ["Node.js", "Express", "REST API", "Auth JWT"],
   },
   {
-    title: "Bases de données",
-    skills: ["MySQL", "PostgreSQL", "Supabase", "SQLite"],
-  },
-  {
-    title: "Soft Skills & IA",
-    skills: ["Prompt Engineering", "Agile", "Architecture UI/UX", "Problem Solving"],
+    title: "Bases de données & IA",
+    skills: ["PostgreSQL", "MySQL", "Supabase", "SQLite", "Prompt Engineering"],
   },
 ];
 
 export const services = [
   {
-    title: "Développement Full Stack",
-    description: "Conception d'applications web complètes de l'architecture base de données à l'interface utilisateur.",
+    title: "Développement Mobile & Web",
+    description: "Conception d'applications mobiles Flutter et d'applications web full stack complètes, performantes et intuitives.",
     iconName: "Code2",
     gradient: "from-cyan-500/20 to-blue-500/20",
     iconColor: "text-cyan-500",
@@ -92,18 +92,32 @@ export const approachPoints = [
 
 export const projects = [
   {
-    name: "Portfolio",
+    name: "MyBudget",
+    category: "Application Mobile",
     description:
-      "Site vitrine personnel présentant mes compétences, mes projets et mon parcours de développeur web et mobile.",
-    technologies: ["React", "Framer Motion", "Lucide React", "Tailwind CSS"],
-    image: "/projet-portfolio.jpg",
+      "Application mobile de gestion de finances personnelles en FCFA (XOF), avec calcul du solde en temps réel, budgets par catégorie, épargne et synchronisation hors ligne sécurisée.",
+    technologies: ["Flutter", "Dart", "Node.js", "PostgreSQL", "JWT"],
+    repository: "https://github.com/projet-sit/Mybudjet",
+    image: "/projet-mybudget.jpg",
+    status: "Terminé",
+    year: "2026",
+  },
+  {
+    name: "UNIONE",
+    category: "Application Mobile",
+    description:
+      "Assistant USSD intelligent pour le Bénin regroupant les actions courantes pour MTN, MOOV et Celtiis : solde, transfert, achat de crédit, forfaits et assistance.",
+    technologies: ["Flutter", "Dart", "Material Design 3", "Offline"],
+    repository: "https://github.com/projet-sit/unione",
+    image: "/projet-unione.jpg",
     status: "Terminé",
     year: "2026",
   },
   {
     name: "Alerte229",
+    category: "Application Web",
     description:
-      "Plateforme web de surveillance citoyenne permettant de signaler des incidents urbains avec photos, description, localisation et suivi par les autorités.",
+      "Plateforme web de surveillance citoyenne permettant de signaler des incidents urbains avec photos, description, localisation sur carte interactive et suivi par les autorités.",
     technologies: ["React", "TypeScript", "Supabase", "Tailwind CSS"],
     repository: "https://github.com/projet-sit/alerte229",
     image: "/projet-alerte229.jpg",
@@ -112,21 +126,23 @@ export const projects = [
   },
   {
     name: "Expo d'Art",
+    category: "Application Web",
     description:
       "Application de mise en relation entre artistes peintres ou dessinateurs béninois et le public, avec galerie interactive, profils artistes et espace admin.",
-    technologies: ["React", "Node.js", "Express", "SQLite"],
+    technologies: ["React", "Node.js", "Express", "SQLite", "Tailwind CSS"],
     repository: "https://github.com/projet-sit/expo-d-art",
     image: "/projet-expo-d-art.jpg",
     status: "En cours",
     year: "2026",
   },
   {
-    name: "UNIONE",
+    name: "Portfolio",
+    category: "Application Web",
     description:
-      "Assistant USSD intelligent pour le Bénin regroupant les actions courantes pour MTN, MOOV et Celtiis : solde, transfert, achat de crédit, forfaits et assistance.",
-    technologies: ["Flutter", "Dart", "Material Design 3"],
-    repository: "https://github.com/projet-sit/unione",
-    image: "/projet-unione.jpg",
+      "Site vitrine personnel présentant mes compétences, mes projets et mon parcours de développeur full stack et mobile, optimisé SEO et performance.",
+    technologies: ["React", "Tailwind CSS", "Framer Motion", "Vite", "Node.js"],
+    repository: "https://github.com/projet-sit/portfolio-personel",
+    image: "/projet-portfolio.jpg",
     status: "Terminé",
     year: "2026",
   },
