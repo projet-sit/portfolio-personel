@@ -7,3 +7,9 @@ services:
     envVars:
       - key: NODE_VERSION
         value: 20.0.0
+      - key: RESEND_API_KEY
+        sync: false
+      - key: RESEND_FROM_EMAIL
+        sync: false
+      - key: QUOTE_TO_EMAIL
+        value: ulrichidohou5@gmail.com
