@@ -23,19 +23,7 @@ npm start
 
 Le serveur Express écoute `http://127.0.0.1:8085` par défaut. L'hébergeur peut fournir un autre port via la variable d'environnement `PORT`.
 
-## Envoi des demandes de devis
-
-Le formulaire envoie la demande au serveur sans quitter la page. Après confirmation du service d'e-mail, les champs sont vidés et un message de succès s'affiche. En cas d'échec, les champs restent remplis.
-
-L'envoi utilise l'API Resend. Pour l'activer en production, créez une clé API Resend et vérifiez le domaine/adresse d'expédition, puis configurez ces variables dans l'environnement Render :
-
-- `RESEND_API_KEY` : clé secrète de l'API Resend.
-- `RESEND_FROM_EMAIL` : adresse d'expédition autorisée, par exemple `Portfolio <devis@votredomaine.com>`.
-- `QUOTE_TO_EMAIL` : adresse de réception (par défaut `ulrichidohou5@gmail.com`).
-
-Ne mettez jamais la clé API dans le code client ou dans une variable `VITE_`.
-
-## Variables d'environnement et sécurité
+## Sécurité
 
 Le portfolio ne requiert aucune variable d'environnement côté navigateur et ne contient aucune clé API dans son code. Ne placez jamais un secret dans une variable préfixée par `VITE_` : ces valeurs sont incluses dans le bundle public. Les clés serveur doivent être stockées uniquement dans l'environnement de l'hébergeur (jamais dans le dépôt).
 

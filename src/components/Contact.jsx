@@ -1,4 +1,4 @@
-import { ArrowRight, Mail, MessageCircle, Send } from "lucide-react";
+import { Mail, MessageCircle, Send } from "lucide-react";
 import { profile } from "../data/portfolio";
 import SectionHeading from "./ui/SectionHeading";
 import Reveal from "./ui/Reveal";
@@ -17,28 +17,10 @@ export default function Contact() {
             </SectionHeading>
             
             <p className="mt-8 text-center text-xl leading-relaxed text-slate-400 max-w-2xl mx-auto">
-              Une idée, une amélioration à réaliser ou un produit à construire ? Décrivez votre besoin et faisons le premier pas.
+              Une idée, une amélioration à réaliser ou un produit à construire ? Contactez-moi directement par e-mail ou WhatsApp.
             </p>
 
-            <div className="mx-auto mt-12 grid max-w-5xl gap-8 lg:grid-cols-[1.35fr_0.65fr]">
-              <a href="#/devis" className="group rounded-[2rem] border border-cyan-400/25 bg-cyan-400/10 p-8 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-300/60 hover:bg-cyan-400/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300">
-                <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-cyan-300">Demander un devis</p>
-                <h3 className="mt-4 text-2xl font-extrabold text-white">Présentez votre projet, simplement.</h3>
-                <p className="mt-3 max-w-xl text-sm leading-relaxed text-slate-300">Accédez à une page dédiée pour décrire votre besoin, votre budget indicatif et votre échéance.</p>
-                <span className="mt-7 inline-flex items-center gap-2 text-sm font-extrabold text-cyan-200">Ouvrir le formulaire <ArrowRight className="transition-transform group-hover:translate-x-1" size={18} aria-hidden="true" /></span>
-              </a>
-              <aside className="flex flex-col justify-center rounded-[2rem] border border-white/10 bg-white/[0.035] p-8">
-                <p className="text-sm font-extrabold uppercase tracking-[0.18em] text-cyan-300">Un échange efficace</p>
-                <h3 className="mt-4 text-2xl font-extrabold text-white">Allons à l'essentiel.</h3>
-                <ol className="mt-7 space-y-5 text-sm leading-relaxed text-slate-400">
-                  <li><span className="mr-3 font-extrabold text-cyan-300">01</span>Présentez votre objectif et vos priorités.</li>
-                  <li><span className="mr-3 font-extrabold text-cyan-300">02</span>Remplissez le formulaire dédié en quelques minutes.</li>
-                  <li><span className="mr-3 font-extrabold text-cyan-300">03</span>Nous définissons ensemble la suite adaptée à votre projet.</li>
-                </ol>
-              </aside>
-            </div>
-
-            <div className="mt-8 grid gap-5 sm:grid-cols-2 max-w-5xl mx-auto">
+            <div className="mx-auto mt-12 grid max-w-3xl gap-5 sm:grid-cols-2">
               <a
                 href={`mailto:${profile.email}`}
                 aria-label={`Écrire à ${profile.email}`}
