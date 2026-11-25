@@ -21,7 +21,17 @@ export default function QuoteForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(request),
       });
-      const result = await response.json();
+      const contentType = response.headers.get("content-type") || "";
+      if (!contentType.includes("application/json")) {
+        throw new Error("L’envoi du formulaire est momentanément indisponible. Contactez-moi directement par e-mail.");
+      }
+
+      let result;
+      try {
+        result = await response.json();
+      } catch {
+        throw new Error("Le serveur a renvoyé une réponse invalide. Contactez-moi directement par e-mail.");
+      }
 
       if (!response.ok) {
         throw new Error(result.error || "L’envoi a échoué. Réessayez dans un instant.");
